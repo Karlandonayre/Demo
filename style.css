@@ -1,0 +1,9 @@
+.container{
+		background: black;
+		width: 650px;
+		height: 60px;
+		align-content: center;
+}
+button{
+	width: 8em;
+}
