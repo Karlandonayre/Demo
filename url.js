@@ -5,6 +5,6 @@ $(document).ready(function(){
 	cargar(_globalids);
 
 	function cargar(_globalids){
-		console.log(parametros);
+		console.log(_globalids);
 	}
 });
