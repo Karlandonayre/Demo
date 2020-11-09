@@ -1,11 +1,11 @@
 $(document).ready(function(){
 	let urlparams = window.location.search
-	console.log(urlparams);
-	_departamento = urlparams.substring(1);
-	(_departamento==undefined || _departamento==' ') ? _departamento = "undefined": "";
-	cargar(_departamento);
+	_globalids = urlparams.substring(1);
+	(_globalids==undefined || _globalids==' ') ? _globalids = "undefined": "";
+	cargar(_globalids);
 
-	function cargar(_departamento){
-		console.log(_departamento);
+	function cargar(_globalids){
+		parametros = _globalids.split('%20')
+		console.log(parametros);
 	}
 });
