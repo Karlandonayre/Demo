@@ -43,14 +43,17 @@ require(
 		function cargar(_params){
 			var parametros = _params.split('&')
 			console.log(parametros);
+			arrayParam = [];
 			for (var i = 0; i < parametros.length; i++) {
-				param[i] = parametros[i].split('=')[1];
-				console.log(param[i]);
+				param = parametros[i].split('=')[1];
+				arrayParam.push(param);
 			}
-			coddepart = param1;
-			codprov = param2;
-			coddist = param3;
-			
+			coddepart = arrayParam[1];
+			codprov = arrayParam[2];
+			coddist = arrayParam[3];
+			console.log(arrayParam);
+			console.log(coddepart, codprov, coddist);
+
 		}		
 	});
 
