@@ -30,9 +30,9 @@ require(
   	var fnombdist = "DISTRITO";
   	var fdireccion = "DIRECCION";
   	var factividad = "ACTIVIDAD";
-  	var coddepart = "CODDEPARTAMENTO";
-  	var codprov = "CODDPROVINCIA";
-  	var coddist = "UBIGEO";
+  	var fcoddepart = "CODDEPARTAMENTO";
+  	var fcodprov = "CODDPROVINCIA";
+  	var fcoddist = "UBIGEO";
 
   	$("#btn_export").on('click', function(){
 		let urlparams = window.location.search
@@ -41,9 +41,16 @@ require(
 		cargar(_params);
 
 		function cargar(_params){
-			console.log(_params);
 			var parametros = _params.split('&')
 			console.log(parametros);
+			for (var i = 0; i < parametros.length; i++) {
+				param[i] = parametros[i].split('=')[1];
+				console.log(param[i]);
+			}
+			coddepart = param1;
+			codprov = param2;
+			coddist = param3;
+			
 		}		
 	});
 
