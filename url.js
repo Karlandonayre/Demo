@@ -42,7 +42,7 @@ require(
 
 		function cargar(_params){
 			console.log(_params);
-			var parametros = (_params.split('&')).split('=')[1];
+			var parametros = _params.split('&')
 			console.log(parametros);
 		}		
 	});
