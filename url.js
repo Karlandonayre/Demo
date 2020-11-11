@@ -19,8 +19,10 @@ require(
     watchUtils,
     array
   ){
-    //servicio
-    var url_prueba = "https://services6.arcgis.com/qHdoJI2FoNfsEzow/ArcGIS/rest/services/tabla_servicio_dash/FeatureServer/0";
+    //servicio prueba
+    //var url_prueba = "https://services6.arcgis.com/qHdoJI2FoNfsEzow/ArcGIS/rest/services/tabla_servicio_dash/FeatureServer/0";
+    var url_prueba = "https://services5.arcgis.com/oAvs2fapEemUpOTy/arcgis/rest/services/FS_LyOper_LVGLP_v04/FeatureServer/0/";
+
     //Fields
     var fobjectid = "OBJECTID_";
     var fregisthidroc = "REGISTRO_DE_HIDORCARBUROS_";
@@ -43,6 +45,8 @@ require(
 
     function cargar(_params_url){
       var parametros = _params_url.split('&');
+      //prueba
+      var parametros = ["codDepart=15","codProv=", "codDist="];
       arrayParam = [];
       for (var i = 0; i < parametros.length; i++) {
         parametro = parametros[i].split('=')[1];
