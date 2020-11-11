@@ -56,18 +56,24 @@ require(
       var codprov = arrayParam[1].toString();
       var coddist = arrayParam[2].toString();
       
-      console.log("departamento = ", coddepart,"provincia = " ,codprov, "distrito = " , coddist); 
+       console.log("departamento = ", coddepart,"provincia = " ,codprov, "distrito = " , coddist); 
       if(coddist != ""){
-        porDistrito(coddist);
+        cargarDatos(coddist,"distrito");
       }else if(codprov != ""){
-        porProvincia(codprov);
+        cargarDatos(codprov,"provincia");
       }else if(coddepart != ""){
-        porDepartamento(coddepart);
+        cargarDatos(coddepart,"departamento");
       }
     } 
 
-    function porDepartamento(coddepart){
-        var sql = "CODDEPARTAMENTO = "+coddepart;
+    function cargarDatos(parametro, tipo){
+        if(tipo == "distrito"){
+          var sql = "UBIGEO_= "+parametro;
+        }else if(tipo == "provincia"){
+          var sql = "CODDPROVINCIA_ = "+parametro;
+        }else if(tiipo == "departamento"){
+          var sql = "CODDEPARTAMENTO_ = "+parametro;
+        }
         console.log(sql);
         var query = new QueryTask({url:url_prueba});
         var params = new Query;
