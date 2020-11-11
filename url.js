@@ -43,8 +43,6 @@ require(
 
     function cargar(_params_url){
       var parametros = _params_url.split('&');
-      //prueba
-      var parametros = ["codDepart=15","codProv=", "codDist="];
       arrayParam = [];
       for (var i = 0; i < parametros.length; i++) {
         parametro = parametros[i].split('=')[1];
