@@ -19,6 +19,7 @@ require(
     watchUtils,
     array
   ){
+  $("#mensaje").hide();
     //servicio prueba
     //var url_prueba = "https://services6.arcgis.com/qHdoJI2FoNfsEzow/ArcGIS/rest/services/tabla_servicio_dash/FeatureServer/0";
     var url_prueba = "https://services5.arcgis.com/oAvs2fapEemUpOTy/arcgis/rest/services/FS_LyOper_LVGLP_v04/FeatureServer/0/";
@@ -78,8 +79,13 @@ require(
           console.log(response);
           if(response.features.length === 0){
             console.log("sin registros");
+<<<<<<< HEAD
             $("#mensaje").css('display', 'block');
             $("#mensaje").fadeOut(4000);
+=======
+            $("#mensaje").show();
+            $("#mensaje").hide(4000);
+>>>>>>> a1810201869dd639dcf203d246670aafdff178f8
           }else{
             var registros = response.features;
             var tabla = $("#tbl_datos").html("");
