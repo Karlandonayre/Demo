@@ -33,7 +33,7 @@ require(
     var fdireccion = "DIRECCION";
     var factividad = "ACTIVIDAD";
     var fcoddepart = "CODDEPARTAMENTO";
-    var fcodprov = "CODDPROVINCIA";
+    var fcodprov = "CODPROVINCIA";
     var fcoddist = "UBIGEO";
 
     $("#btn_export").on('click', function(){
@@ -70,7 +70,7 @@ require(
         if(tipo == "distrito"){
           var sql = "UBIGEO= "+parametro;
         }else if(tipo == "provincia"){
-          var sql = "CODDPROVINCIA = "+parametro;
+          var sql = "CODPROVINCIA = "+parametro;
         }else if(tipo == "departamento"){
           var sql = "CODDEPARTAMENTO = "+parametro;
         }
