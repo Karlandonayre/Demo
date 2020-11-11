@@ -68,11 +68,11 @@ require(
 
     function cargarDatos(parametro, tipo){
         if(tipo == "distrito"){
-          var sql = "UBIGEO_= "+parametro;
+          var sql = "UBIGEO= "+parametro;
         }else if(tipo == "provincia"){
-          var sql = "CODDPROVINCIA_ = "+parametro;
+          var sql = "CODDPROVINCIA = "+parametro;
         }else if(tipo == "departamento"){
-          var sql = "CODDEPARTAMENTO_ = "+parametro;
+          var sql = "CODDEPARTAMENTO = "+parametro;
         }
         console.log(sql);
         var query = new QueryTask({url:url_prueba});
