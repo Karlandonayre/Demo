@@ -46,7 +46,7 @@ require(
     function cargar(_params_url){
       var parametros = _params_url.split('&');
       //prueba
-      //var parametros = ["codDepart=15","codProv=", "codDist="];
+      var parametros = ["codDepart=35","codProv=", "codDist="];
       arrayParam = [];
       for (var i = 0; i < parametros.length; i++) {
         parametro = parametros[i].split('=')[1];
@@ -78,6 +78,8 @@ require(
           console.log(response);
           if(response.features.length === 0){
             console.log("sin registros");
+            $("#mensaje").css('display', 'block');
+            $("#mensaje").fadeOut(4000);
           }else{
             var registros = response.features;
             var tabla = $("#tbl_datos").html("");
