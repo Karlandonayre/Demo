@@ -58,22 +58,16 @@ require(
       
        console.log("departamento = ", coddepart,"provincia = " ,codprov, "distrito = " , coddist); 
       if(coddist != ""){
-        cargarDatos(coddist,"distrito");
+        cargarDatos("UBIGEO = "+coddist);
       }else if(codprov != ""){
-        cargarDatos(codprov,"provincia");
+        cargarDatos("CODPROVINCIA = "+codprov);
       }else if(coddepart != ""){
-        cargarDatos(coddepart,"departamento");
+        cargarDatos("CODDEPARTAMENTO = "+coddepart);
       }
     } 
 
-    function cargarDatos(parametro, tipo){
-        if(tipo == "distrito"){
-          var sql = "UBIGEO= "+parametro;
-        }else if(tipo == "provincia"){
-          var sql = "CODPROVINCIA = "+parametro;
-        }else if(tipo == "departamento"){
-          var sql = "CODDEPARTAMENTO = "+parametro;
-        }
+    function cargarDatos(consulta){
+        var sql = consulta;
         console.log(sql);
         var query = new QueryTask({url:url_prueba});
         var params = new Query;
