@@ -24,17 +24,17 @@ require(
     var url_prueba = "https://services5.arcgis.com/oAvs2fapEemUpOTy/arcgis/rest/services/FS_LyOper_LVGLP_v04/FeatureServer/0/";
 
     //Fields
-    var fobjectid = "OBJECTID_";
-    var fregisthidroc = "REGISTRO_DE_HIDORCARBUROS_";
-    var frsocial = "RAZON_SOCIAL_";
-    var fnombdepart = "DEPARTAMENTO_";
-    var fnombprov = "PROVINCIA_";
-    var fnombdist = "DISTRITO_";
-    var fdireccion = "DIRECCION_";
-    var factividad = "ACTIVIDAD_";
-    var fcoddepart = "CODDEPARTAMENTO_";
-    var fcodprov = "CODDPROVINCIA_";
-    var fcoddist = "UBIGEO_";
+    var fobjectid = "OBJECTID";
+    var fregisthidroc = "REGISTRO_DE_HIDORCARBUROS";
+    var frsocial = "RAZON_SOCIAL";
+    var fnombdepart = "DEPARTAMENTO";
+    var fnombprov = "PROVINCIA";
+    var fnombdist = "DISTRITO";
+    var fdireccion = "DIRECCION";
+    var factividad = "ACTIVIDAD";
+    var fcoddepart = "CODDEPARTAMENTO";
+    var fcodprov = "CODDPROVINCIA";
+    var fcoddist = "UBIGEO";
 
     $("#btn_export").on('click', function(){
       let urlparams = window.location.search
@@ -67,7 +67,7 @@ require(
     } 
 
     function porDepartamento(coddepart){
-        var sql = "CODDEPARTAMENTO_ = "+coddepart;
+        var sql = "CODDEPARTAMENTO = "+coddepart;
         console.log(sql);
         var query = new QueryTask({url:url_prueba});
         var params = new Query;
