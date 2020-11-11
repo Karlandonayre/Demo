@@ -79,13 +79,10 @@ require(
           console.log(response);
           if(response.features.length === 0){
             console.log("sin registros");
-<<<<<<< HEAD
             $("#mensaje").css('display', 'block');
             $("#mensaje").fadeOut(4000);
-=======
             $("#mensaje").show();
             $("#mensaje").hide(4000);
->>>>>>> a1810201869dd639dcf203d246670aafdff178f8
           }else{
             var registros = response.features;
             var tabla = $("#tbl_datos").html("");

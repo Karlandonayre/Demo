@@ -4,25 +4,18 @@ body{
 	background: black;
 	padding: 0 40px;
 }
-<<<<<<< HEAD
 #mensaje{
 	display: none;
 	
 }
-=======
->>>>>>> a1810201869dd639dcf203d246670aafdff178f8
 .div-boton{
 		background: black;
 		width: 100%;
 		height: 60px;
 		align-content: center;
-<<<<<<< HEAD
 		color: white;
 		text-align: center;
 }
 hr{
 	background: white;
 }
-=======
-}
->>>>>>> a1810201869dd639dcf203d246670aafdff178f8
