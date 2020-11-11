@@ -19,6 +19,7 @@ require(
     watchUtils,
     array
   ){
+  $("#mensaje").hide();
     //servicio prueba
     //var url_prueba = "https://services6.arcgis.com/qHdoJI2FoNfsEzow/ArcGIS/rest/services/tabla_servicio_dash/FeatureServer/0";
     var url_prueba = "https://services5.arcgis.com/oAvs2fapEemUpOTy/arcgis/rest/services/FS_LyOper_LVGLP_v04/FeatureServer/0/";
@@ -46,7 +47,7 @@ require(
     function cargar(_params_url){
       var parametros = _params_url.split('&');
       //prueba
-      //var parametros = ["codDepart=15","codProv=", "codDist="];
+      var parametros = ["codDepart=35","codProv=", "codDist="];
       arrayParam = [];
       for (var i = 0; i < parametros.length; i++) {
         parametro = parametros[i].split('=')[1];
@@ -78,6 +79,8 @@ require(
           console.log(response);
           if(response.features.length === 0){
             console.log("sin registros");
+            $("#mensaje").show();
+            $("#mensaje").hide(4000);
           }else{
             var registros = response.features;
             var tabla = $("#tbl_datos").html("");
