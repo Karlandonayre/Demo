@@ -38,7 +38,7 @@ require(
       let urlparams = window.location.search
       _params_url = urlparams.substring(1);
       (_params_url==undefined || _params_url==' ') ? _params_url = "undefined": "";
-      cargar(_params_url);    
+      cargar(_params_url);   
     });
 
     function cargar(_params_url){
@@ -78,6 +78,7 @@ require(
             console.log("sin registros");
           }else{
             var registros = response.features;
+            var tabla = $("#tbl_datos").html("");
             for (var i = 0; i < registros.length; i++) {
               var atributos = registros[i].attributes;
               var departamento = atributos[fnombdepart];
@@ -86,9 +87,28 @@ require(
               var rsocial = atributos[frsocial];
               var actividad = atributos[factividad];
               console.log(departamento);
+
+              tabla.append(`<tr>
+                              <td>${departamento}</td>
+                              <td>${provincia}</td>
+                              <td>${distrito}</td>
+                              <td>${rsocial}</td>
+                              <td>${actividad}</td>
+                            </tr>`);
             }
+            console.log(tabla);
+            exportar();
           }
         });
+    }
+
+    function exportar(){
+      //exportacion de datos a excel
+      var prueba = "prueba";
+      var filename = 'export_'+prueba+'.xls';
+      var $tbldatos = document.getElementById('tbl_exportar');
+      Exporter.export($tbldatos, filename, 'Prueba');
+      return false; 
     }
 
   })
