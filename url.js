@@ -71,7 +71,7 @@ require(
           var sql = "UBIGEO_= "+parametro;
         }else if(tipo == "provincia"){
           var sql = "CODDPROVINCIA_ = "+parametro;
-        }else if(tiipo == "departamento"){
+        }else if(tipo == "departamento"){
           var sql = "CODDEPARTAMENTO_ = "+parametro;
         }
         console.log(sql);
