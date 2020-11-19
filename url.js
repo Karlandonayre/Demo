@@ -36,6 +36,7 @@ require(
     var fcoddepart = "CODDEPARTAMENTO";
     var fcodprov = "CODPROVINCIA";
     var fcoddist = "UBIGEO";
+    var fcodosinergmin = "CODIGO_DE_OSINERGMIN";
 
     $("#btn_export").on('click', function(){
       let urlparams = window.location.search
@@ -91,7 +92,10 @@ require(
               var departamento = atributos[fnombdepart];
               var provincia = atributos[fnombprov];
               var distrito = atributos[fnombdist];
+              var codOsinergmin = atributos[fcodosinergmin];
+              var regHidroc = atributos[fregisthidroc];
               var rsocial = atributos[frsocial];
+              var direccion = atributos[fdireccion];
               var actividad = atributos[factividad];
               console.log(departamento);
 
@@ -99,7 +103,10 @@ require(
                               <td>${departamento}</td>
                               <td>${provincia}</td>
                               <td>${distrito}</td>
+                              <td>${codOsinergmin}</td>
+                              <td>${regHidroc}</td>
                               <td>${rsocial}</td>
+                              <td>${direccion}</td>
                               <td>${actividad}</td>
                             </tr>`);
             }
