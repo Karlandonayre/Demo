@@ -99,6 +99,7 @@ require(
               var actividad = atributos[factividad];
               console.log(departamento);
               console.log(registros);
+              console.log("campos que no se ven",codOsinergmin,regHidroc,direccion);
               tabla.append(`<tr>
                               <td>${departamento}</td>
                               <td>${provincia}</td>
@@ -110,7 +111,6 @@ require(
                               <td>${actividad}</td>
                             </tr>`);
             }
-            console.log(tabla);
             exportar();
           }
         });
