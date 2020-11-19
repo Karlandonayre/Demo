@@ -111,7 +111,6 @@ require(
                               <td>${actividad}</td>
                             </tr>`);
             }
-            console.log(tabla);
             exportar();
           }
         });
