@@ -46,30 +46,48 @@ require(
     });
 
     function cargar(_params_url){
-		console.log(_params_url);
       var parametros = _params_url.split('&');
       //prueba
-      //var parametros = ["codDepart=15","codProv=", "codDist="];
+      //var parametros = ["codDepart=17","UPPER_DEP=MADRE%20DE%20DIOS","codProv=1703","UPPER_PROV=TAHUAMANU", "codDist=170302","UPPER_DIST=IBERIA"];
+      var parametros = ["UPPER_DEP=MADRE%20DE%20DIOS","UPPER_PROV=", "UPPER_DIST="];
+
       arrayParam = [];
       for (var i = 0; i < parametros.length; i++) {
         parametro = parametros[i].split('=')[1];
         arrayParam.push(parametro);
       }
-      var coddepart = arrayParam[0].toString();
-      var codprov = arrayParam[1].toString();
-      var coddist = arrayParam[2].toString();
+      var upper_dep = arrayParam[0].toString();
+      var upper_prov = arrayParam[1].toString();
+      var upper_dist = arrayParam[2].toString();
       
-       console.log("departamento = ", coddepart,"provincia = " ,codprov, "distrito = " , coddist); 
-      if(coddist != ""){
-        cargarDatos("UBIGEO = "+coddist);
-      }else if(codprov != ""){
-        cargarDatos("CODPROVINCIA = "+codprov);
-      }else if(coddepart != ""){
-        cargarDatos("CODDEPARTAMENTO = "+coddepart);
+      if(upper_dist != ""){
+        upper_dist = upper_dist.split('%20');
+        var distrito = "";
+        for (var i = 0; i < upper_dist.length; i++) {
+          distrito = distrito + upper_dist[i] + " ";
+        }
+        var consulta = "UPPER_DIST = '"+distrito+"'";
+        cargarDatos(consulta,distrito);
+      }else if(upper_prov != ""){
+        upper_prov = upper_prov.split('%20');
+        var provincia = "";
+        for (var i = 0; i < upper_prov.length; i++) {
+          provincia = provincia + upper_prov[i] + " ";
+        }
+        var consulta = "UPPER_PROV = '"+provincia+"'";
+        cargarDatos(consulta, provincia);
+      }else if(upper_dep != ""){
+        upper_dep = upper_dep.split('%20');
+        var departamento = "";
+        for (var i = 0; i < upper_dep.length; i++) {
+          departamento = departamento + upper_dep[i] + " ";
+        }
+        var consulta = "UPPER_DEP = '"+departamento+"'";
+        cargarDatos(consulta, departamento);
       }
     } 
 
-    function cargarDatos(consulta){
+    function cargarDatos(consulta, tipo){
         var sql = consulta;
         console.log(sql);
         var query = new QueryTask({url:url_prueba});
@@ -100,7 +118,6 @@ require(
               var actividad = atributos[factividad];
               console.log(departamento);
               console.log(registros);
-              console.log("campos que no se ven",codOsinergmin,regHidroc,direccion);
               tabla.append(`<tr>
                               <td>${departamento}</td>
                               <td>${provincia}</td>
@@ -112,17 +129,16 @@ require(
                               <td>${actividad}</td>
                             </tr>`);
             }
-            exportar();
+            exportar(tipo);
           }
         });
     }
 
-    function exportar(){
+    function exportar(tipo){
       //exportacion de datos a excel
-      var prueba = "prueba";
-      var filename = 'export_'+prueba+'.xls';
+      var filename = 'export_'+tipo+'.xls';
       var $tbldatos = document.getElementById('tbl_exportar');
-      Exporter.export($tbldatos, filename, 'Prueba');
+      Exporter.export($tbldatos, filename, 'Locales de venta LGVL');
       return false; 
     }
 
