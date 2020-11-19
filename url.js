@@ -48,7 +48,7 @@ require(
     function cargar(_params_url){
       var parametros = _params_url.split('&');
       //prueba
-      //var parametros = ["codDepart=15","codProv=", "codDist="];
+      var parametros = ["codDepart=15","codProv=", "codDist="];
       arrayParam = [];
       for (var i = 0; i < parametros.length; i++) {
         parametro = parametros[i].split('=')[1];
@@ -99,7 +99,6 @@ require(
               var actividad = atributos[factividad];
               console.log(departamento);
               console.log(registros);
-              console.log(codOsinergmin, regHidroc, direccion);
               tabla.append(`<tr>
                               <td>${departamento}</td>
                               <td>${provincia}</td>
@@ -111,6 +110,7 @@ require(
                               <td>${actividad}</td>
                             </tr>`);
             }
+            console.log(tabla);
             exportar();
           }
         });
