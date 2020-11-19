@@ -47,9 +47,6 @@ require(
 
     function cargar(_params_url){
       var parametros = _params_url.split('&');
-      //prueba
-      //var parametros = ["codDepart=17","UPPER_DEP=MADRE%20DE%20DIOS","codProv=1703","UPPER_PROV=TAHUAMANU", "codDist=170302","UPPER_DIST=IBERIA"];
-      var parametros = ["UPPER_DEP=MADRE%20DE%20DIOS","UPPER_PROV=", "UPPER_DIST="];
 
       arrayParam = [];
       for (var i = 0; i < parametros.length; i++) {
