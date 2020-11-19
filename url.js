@@ -99,6 +99,7 @@ require(
               var actividad = atributos[factividad];
               console.log(departamento);
               console.log(registros);
+              console.log(codOsinergmin, regHidroc, direccion);
               tabla.append(`<tr>
                               <td>${departamento}</td>
                               <td>${provincia}</td>
