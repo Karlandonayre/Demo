@@ -46,6 +46,7 @@ require(
     });
 
     function cargar(_params_url){
+      console.log(_params_url);
       var parametros = _params_url.split('&');
 
       arrayParam = [];
